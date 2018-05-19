@@ -46,7 +46,9 @@ bot.on("message", async message => {
 
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
-  if(!bot.commands.get(cmd.slice(prefix.length))) return message.channel.send("Command Not Found");
+  if (!commandfile) {
+    if (message.content.startsWith(prefix) return message.channel.send("Command Not Found");
+  }
 });
 
 bot.login(process.env.botToken).catch(err => console.log(err));
