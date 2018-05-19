@@ -29,7 +29,7 @@ bot.on("ready", async () => {
   .setAuthor(bot.user.username, bot.user.avatarURL)
   .setDescription("Bot Successfully Restarted");
   
-  bot.channels.find('name', "chat").send(startEmbed);
+  bot.channels.find('name', "bot").send(startEmbed);
 
   bot.user.setActivity("Getting Updated", {type: "PLAYING"});
 
