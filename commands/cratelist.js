@@ -1,9 +1,11 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-message.channel.send(`Test was successful`);
+let cratelist = new DIscord.RichEmbed()
+.addField("⚪Common Crate⚪" , "25$");
+message.channel.send(cratelist)
 }
 
 module.exports.help = {
-  name: "test"
+  name: "cratelist"
 }
