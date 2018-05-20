@@ -47,6 +47,10 @@ bot.on("message", async message => {
 
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
+  
+  bot.on("guildMemberAdd", member => {
+    member.user.send("Welcome")
+})
 });
 
 bot.login(process.env.botToken).catch(err => console.log(err));
