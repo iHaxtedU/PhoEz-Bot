@@ -8,7 +8,7 @@ if (!roletogive) return message.channel.send("Please Include The Role To Give Af
 let role = message.guild.roles.find('name', roletogive)
 if (!role) return message.channel.send("Role Not Found");
   
-who.user.addRole(role);
+who.member.addRole(role);
 message.channel.send(`Successfully Gave ${who} ${role}!`);
 
 }
