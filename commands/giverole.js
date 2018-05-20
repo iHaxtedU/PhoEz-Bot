@@ -5,7 +5,7 @@ let who = message.mentions.users.first();
 if (!who) return message.channel.send("User Not Found, Or Specified");
 let roletogive = args[1];
 if (!roletogive) return message.channel.send("Please Include The Role To Give After User");
-let role = message.guild.roles.find('name,' roletogive)
+let role = message.guild.roles.find('name', roletogive)
 if (!role) return message.channel.send("Role Not Found");
   
 who.addRole(role);
