@@ -34,6 +34,9 @@ bot.on("ready", async () => {
   bot.user.setActivity("Getting Updated", {type: "PLAYING"});
 
 });
+ bot.on("guildMemberAdd", member => {
+    member.user.send("Welcome")
+})
 
 bot.on("message", async message => {
   if(message.author.bot) return;
@@ -47,10 +50,6 @@ bot.on("message", async message => {
 
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
-  
-  bot.on("guildMemberAdd", member => {
-    member.user.send("Welcome")
-})
 });
 
 bot.login(process.env.botToken).catch(err => console.log(err));
