@@ -7,5 +7,5 @@ message.channel.send(`${prize}`);
 }
 
 module.exports.help = {
-  name: "buy common crate"
+  name: "bcc"
 }
