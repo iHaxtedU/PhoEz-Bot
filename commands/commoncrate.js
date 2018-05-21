@@ -1,9 +1,8 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-let prize = Math.floor(Math.random()* 4 + 1)
 
-message.channel.send(`${prize}`);
+message.channel.send("You successfully bought a common crate!")
 }
 
 module.exports.help = {
