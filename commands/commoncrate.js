@@ -3,8 +3,12 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
 let money = JSON.parse(fs.readFileSync("../money.json" , "utf8"));
 let wUser = message.author;
-let moneylevel = money[wUser.id] ? money[wUser.id].money : 0;
 
+
+if(!money[wUser.id]) money[wUser.id] = {
+      money: 0,
+    };
+let moneylevel = money[wUser.id] ? money[wUser.id].money : 0;
 if(moneylevel < 25){
 
 message.channel.send("You successfully did not buy a common crate!")
